@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import currencyToCountryCode from "./constants/currencyCodes";
 import CurrencyTable from "./components/CurrencyTable";
+import CurrencyForm from "./components/CurrencyForm";
 
 
 
@@ -48,7 +49,7 @@ export default function App() {
 
   return (
     <>
-      <form>
+      {/* <form>
         <label>
           <select value={baseCurrency} onChange={handleBaseCurrencyChange}>
             {currencies.map((cur) => (
@@ -73,39 +74,12 @@ export default function App() {
           </select>
         </label>
         <br />
-      </form>
-
+      </form> */}
+    <CurrencyForm fromCurrency={baseCurrency} toCurrency={targetCurrency} baseCurrencyHandler={handleBaseCurrencyChange} targetCurrencyHandler={handleTargetCurrencyChange} allCurrencies={currencies} currencyToCountryCode={currencyToCountryCode}/>
       <br />
 
      <CurrencyTable fromCurrency={baseCurrency} toCurrency={targetCurrency} rates={rates} currencyToCountryCode={currencyToCountryCode}/>
-      {/* <div>
-        { conversionRate ? (
-          <table style={{ border: "2px solid red" }}>
-            <thead>
-              <tr>
-                <th> {baseCurrency} ⇄  </th>
-                <th> {targetCurrency}</th>
-                <th> Rate</th>
-
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td> <img src={baseCurrency === "EUR" ? "https://flagpedia.net/data/org/w580/eu.webp" : getFlagUrl(baseCurrency)} width={32}/> </td>
-                <td> <img src={getFlagUrl(targetCurrency)} /> </td>
-                {console.log(rates)}
-
-                <td> {conversionRate}</td>
-              </tr>
-
-
-
-            </tbody>
-          </table>
-        ) : (
-           <p>No ${baseCurrency} exchange rate for {targetCurrency}</p>
-          )}
-      </div> */}
+    
     </>
   );
 }
