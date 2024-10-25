@@ -1,25 +1,45 @@
-const CurrencyForm = ({fromCurrency , toCurrency}) => {
+const CurrencyForm = ({
+  fromCurrency,
+  toCurrency,
+  baseCurrencyHandler,
+  targetCurrencyHandler,
+  allCurrencies,
+  currencyToCountryCode,
+}) => {
   return (
-    <div>
-     <form>
+    <div className="flex flex-row">
+      <form className="flex flex-col items-center justify-center">
         <label>
-          <select value={baseCurrency} onChange={handleBaseCurrencyChange}>
-            {currencies.map((cur) => (
+          <em className="text-gray-400">
+            {" "}
+            <p className="btn btn-error w-12">From</p>{" "}
+          </em>
+          <select
+            value={fromCurrency}
+            onChange={baseCurrencyHandler}
+            className="select select-bordered w-full max-w-xs select-md"
+          >
+            {allCurrencies.map((cur) => (
               <option key={cur} value={cur}>
-                <img src={`https://flagsapi.com/${currencyToCountryCode[cur].code}/shiny/32.png`} /> 
-                  {`${cur} - ${currencyToCountryCode[cur].name}`}  
+                {`${cur} - ${currencyToCountryCode[cur].name}`}
               </option>
             ))}
           </select>
         </label>
         <br />
-        <br/>
+        <br />
         <label>
-          
-          <select value={targetCurrency} onChange={handleTargetCurrencyChange}>
-            {currencies.map((cur) => (
+          <em className="text-gray-400">
+            {" "}
+            <p className="btn btn-success w-12">To</p>{" "}
+          </em>
+          <select
+            value={toCurrency}
+            onChange={targetCurrencyHandler}
+            className="select select-bordered w-full max-w-xs select-md"
+          >
+            {allCurrencies.map((cur) => (
               <option key={cur} value={cur}>
-                <img src={`https://flagsapi.com/${currencyToCountryCode[cur].code}/shiny/32.png`} />
                 {`${cur} - ${currencyToCountryCode[cur].name}`}
               </option>
             ))}
@@ -27,9 +47,8 @@ const CurrencyForm = ({fromCurrency , toCurrency}) => {
         </label>
         <br />
       </form>
-
     </div>
-  )
-}
+  );
+};
 
-export default CurrencyForm
+export default CurrencyForm;

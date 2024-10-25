@@ -49,36 +49,12 @@ export default function App() {
 
   return (
     <>
-      {/* <form>
-        <label>
-          <select value={baseCurrency} onChange={handleBaseCurrencyChange}>
-            {currencies.map((cur) => (
-              <option key={cur} value={cur}>
-                <img src={`https://flagsapi.com/${currencyToCountryCode[cur].code}/shiny/32.png`} /> 
-                  {`${cur} - ${currencyToCountryCode[cur].name}`}  
-              </option>
-            ))}
-          </select>
-        </label>
-        <br />
-        <br/>
-        <label>
-          
-          <select value={targetCurrency} onChange={handleTargetCurrencyChange}>
-            {currencies.map((cur) => (
-              <option key={cur} value={cur}>
-                <img src={`https://flagsapi.com/${currencyToCountryCode[cur].code}/shiny/32.png`} />
-                {`${cur} - ${currencyToCountryCode[cur].name}`}
-              </option>
-            ))}
-          </select>
-        </label>
-        <br />
-      </form> */}
-    <CurrencyForm fromCurrency={baseCurrency} toCurrency={targetCurrency} baseCurrencyHandler={handleBaseCurrencyChange} targetCurrencyHandler={handleTargetCurrencyChange} allCurrencies={currencies} currencyToCountryCode={currencyToCountryCode}/>
-      <br />
-
-     <CurrencyTable fromCurrency={baseCurrency} toCurrency={targetCurrency} rates={rates} currencyToCountryCode={currencyToCountryCode}/>
+      <div className="flex  flex-col justify-center items-center mt-24">
+      <CurrencyForm fromCurrency={baseCurrency} toCurrency={targetCurrency} baseCurrencyHandler={handleBaseCurrencyChange} targetCurrencyHandler={handleTargetCurrencyChange} allCurrencies={currencies} currencyToCountryCode={currencyToCountryCode}/>
+      
+      <CurrencyTable fromCurrency={baseCurrency} toCurrency={targetCurrency} rates={rates} currencyToCountryCode={currencyToCountryCode}/>
+     
+      </div>
     
     </>
   );
