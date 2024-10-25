@@ -5,10 +5,12 @@ const CurrencyForm = ({
   targetCurrencyHandler,
   allCurrencies,
   currencyToCountryCode,
+  handleSwap,
 }) => {
+  console.log(toCurrency, fromCurrency);
   return (
     <div className="flex flex-row">
-      <form className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center">
         <label>
           <em className="text-gray-400">
             {" "}
@@ -27,6 +29,22 @@ const CurrencyForm = ({
           </select>
         </label>
         <br />
+        <button onClick={handleSwap}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3 7.5 7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5"
+            />
+          </svg>
+        </button>
         <br />
         <label>
           <em className="text-gray-400">
@@ -46,7 +64,7 @@ const CurrencyForm = ({
           </select>
         </label>
         <br />
-      </form>
+      </div>
     </div>
   );
 };

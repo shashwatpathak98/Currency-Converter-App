@@ -3,17 +3,11 @@ import currencyToCountryCode from "./constants/currencyCodes";
 import CurrencyTable from "./components/CurrencyTable";
 import CurrencyForm from "./components/CurrencyForm";
 
-
-
-
-
 export default function App() {
-
   const [baseCurrency, setBaseCurrency] = useState("USD"); // Initial currency selection
   const [targetCurrency, setTargetCurrency] = useState("INR"); // Initial currency selection
   const [rates, setRates] = useState({});
 
-  
   //Supported Currencies based on the mapping above
   const currencies = Object.keys(currencyToCountryCode);
 
@@ -22,7 +16,9 @@ export default function App() {
       const getData = async () => {
         try {
           console.log("Fetching exchange rates...");
-          const response = await fetch(`https://open.er-api.com/v6/latest/${baseCurrency}`);
+          const response = await fetch(
+            `https://open.er-api.com/v6/latest/${baseCurrency}`
+          );
           const responseData = await response.json();
           setRates(responseData.rates || {});
         } catch (error) {
@@ -32,7 +28,6 @@ export default function App() {
       getData();
     }
   }, [baseCurrency]);
-
 
   const handleBaseCurrencyChange = (event) => {
     const oldCurrency = event.target.value.toUpperCase();
@@ -44,18 +39,34 @@ export default function App() {
     setTargetCurrency(newCurrency);
   };
 
-  
- 
+  const swapCountry = () => {
+    setBaseCurrency(targetCurrency);
+
+    setTargetCurrency(baseCurrency);
+  };
 
   return (
     <>
       <div className="flex  flex-col justify-center items-center mt-24">
-      <CurrencyForm fromCurrency={baseCurrency} toCurrency={targetCurrency} baseCurrencyHandler={handleBaseCurrencyChange} targetCurrencyHandler={handleTargetCurrencyChange} allCurrencies={currencies} currencyToCountryCode={currencyToCountryCode}/>
-      
-      <CurrencyTable fromCurrency={baseCurrency} toCurrency={targetCurrency} rates={rates} currencyToCountryCode={currencyToCountryCode}/>
-     
+        <CurrencyForm
+          fromCurrency={baseCurrency}
+          toCurrency={targetCurrency}
+          baseCurrencyHandler={handleBaseCurrencyChange}
+          targetCurrencyHandler={handleTargetCurrencyChange}
+          allCurrencies={currencies}
+          currencyToCountryCode={currencyToCountryCode}
+          setBaseCurrency={setBaseCurrency}
+          setTargetCurrency={setTargetCurrency}
+          handleSwap={swapCountry}
+        />
+
+        <CurrencyTable
+          fromCurrency={baseCurrency}
+          toCurrency={targetCurrency}
+          rates={rates}
+          currencyToCountryCode={currencyToCountryCode}
+        />
       </div>
-    
     </>
   );
 }
