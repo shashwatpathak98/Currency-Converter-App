@@ -52,4 +52,4 @@ Contributions, issues, and feature requests are welcome. Feel free to check [iss
 [Your chosen license, e.g., MIT]
 
 Project Link: [https://github.com/shashwatpathak98/currency-convertor-app]
-Live Demo: [https://currency-converter-app-gules-nine.vercel.app/]
+Live Demo: [https://currency-converter-app-gules-nine.vercel.app/](https://currency-converter-app-gules-nine.vercel.app/)
