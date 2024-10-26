@@ -84,7 +84,7 @@ function CurrencyTable({
       )}
 
       <div className="flex flex-col items-center justify-center mt-3 text-2xl">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           <div>{fromCurrency}</div>
           <div>
             <img src={getFlagUrl(fromCurrency)} />
@@ -92,7 +92,7 @@ function CurrencyTable({
           <div className="flex items-start ">
             <input
               type="number"
-              className=" pl-1 input input-bordered input-accent w-full max-w-xs"
+              className=" pl-3 input input-bordered input-accent w-full max-w-xs"
               onChange={setTargetCurrency}
               defaulValue={displayNewBase}
               autoFocus
@@ -125,7 +125,7 @@ function CurrencyTable({
             <input
               type="text"
               value={displayNewTarget === 0 ? " " : displayNewTarget}
-              className=" pl-1 input input-bordered input-accent w-full max-w-xs"
+              className=" input input-bordered input-accent w-full max-w-xs"
               autoFocus
             />
           </div>
