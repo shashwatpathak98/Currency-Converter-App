@@ -17,7 +17,7 @@ Check out the live demo of the app: [Currency Converter App](https://currency-co
 - Vite
 - Tailwind CSS
 - DaisyUI
-- [Open ER API]
+- [Exchange Rate API](https://www.exchangerate-api.com/)
 
 ## Setup and Installation
 1. Clone the repository:
