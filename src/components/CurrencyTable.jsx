@@ -5,7 +5,7 @@ function CurrencyTable({
   toCurrency,
   rates,
   currencyToCountryCode,
-  
+  handleSwap
 }) {
   const conversionRate = rates[toCurrency];
   const [displayNewTarget, setDisplayNewTarget] = useState(null);
@@ -18,13 +18,19 @@ function CurrencyTable({
 
 
   const setTargetCurrency = (event) => {
+    
     const newTargetCurrency = Number(event.target.value) * rates[toCurrency];
     console.log(newTargetCurrency);
-
+   
     setDisplayNewTarget(newTargetCurrency);
+
     
   };
 
+  const makeBlur = (event) => {
+    setDisplayNewBase(event.target.value=null)
+    setDisplayNewTarget(0)
+  }
 
 
 
@@ -97,14 +103,14 @@ function CurrencyTable({
               type="number"
               className=" pl-1 input input-bordered input-accent w-full max-w-xs"
               onChange={setTargetCurrency}
-              defaulValue={0}
+              defaulValue={displayNewBase}
               autoFocus
-              
+              onBlur={makeBlur}
               
             />
           </div>
         </div>
-        <button >
+        <button onClick={handleSwap} >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -135,9 +141,11 @@ function CurrencyTable({
           <div className="flex items-start ">
           <input
               type="text"
-              defaultValue={displayNewTarget}
+              value={displayNewTarget}
+      
               className=" pl-1 input input-bordered input-accent w-full max-w-xs"
-              readOnly
+              
+              autoFocus
             /> 
           </div>
         </div>
