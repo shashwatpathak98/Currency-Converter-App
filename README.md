@@ -4,7 +4,7 @@
 This Currency Converter App is a React-based web application that allows users to convert between different currencies. It uses real-time exchange rates to provide accurate conversions.
 
 ## Live Demo
-Check out the live demo of the app: [Currency Converter App](https://currency-converter-app-gules-nine.vercel.app/)
+Check out the live demo of the app: [Currency Converter App](https://currency-converter-app-peach.vercel.app/)
 
 ## Features
 - Convert between a wide range of international currencies
@@ -45,6 +45,7 @@ To create a production build, run:
    npm run build
  ```
 
+
 ## Contributing
 Contributions, issues, and feature requests are welcome. Feel free to check [issues page] if you want to contribute.
 
@@ -52,4 +53,4 @@ Contributions, issues, and feature requests are welcome. Feel free to check [iss
 [Your chosen license, e.g., MIT]
 
 Project Link: [https://github.com/shashwatpathak98/currency-converter-app] <br/>
-Live Demo: [https://currency-converter-app-gules-nine.vercel.app/](https://currency-converter-app-gules-nine.vercel.app/)
+Live Demo: [(https://currency-converter-app-peach.vercel.app/)]
