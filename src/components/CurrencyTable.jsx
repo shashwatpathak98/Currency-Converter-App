@@ -83,8 +83,8 @@ function CurrencyTable({
         </p>
       )}
 
-      <div className="flex flex-col items-center justify-center mt-3 text-2xl">
-        <div className="flex items-center gap-3">
+      <div className="flex flex-col items-center justify-center mt-3 mb-2 text-2xl">
+        <div className="flex items-center justify-center gap-2">
           <div>{fromCurrency}</div>
           <div>
             <img src={getFlagUrl(fromCurrency)} />
@@ -116,7 +116,7 @@ function CurrencyTable({
             />
           </svg>
         </button>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center justify-center gap-2">
           <div>{toCurrency}</div>
           <div>
             <img src={getFlagUrl(toCurrency)} />
