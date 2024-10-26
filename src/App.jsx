@@ -70,7 +70,7 @@ export default function App() {
           toCurrency={targetCurrency}
           rates={rates}
           currencyToCountryCode={currencyToCountryCode}
-          handleSwap={swapCountry}
+          
          
         />
 
