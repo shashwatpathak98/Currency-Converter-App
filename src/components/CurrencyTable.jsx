@@ -5,34 +5,25 @@ function CurrencyTable({
   toCurrency,
   rates,
   currencyToCountryCode,
-  handleSwap
+  handleSwap,
 }) {
   const conversionRate = rates[toCurrency];
   const [displayNewTarget, setDisplayNewTarget] = useState(null);
   const [displayNewBase, setDisplayNewBase] = useState(null);
-  
 
   const getFlagUrl = (currencyCode) => {
     return `https://flagsapi.com/${currencyToCountryCode[currencyCode].code}/shiny/32.png`;
   };
 
-
   const setTargetCurrency = (event) => {
-    
     const newTargetCurrency = Number(event.target.value) * rates[toCurrency];
-    console.log(newTargetCurrency);
-   
     setDisplayNewTarget(newTargetCurrency);
-
-    
   };
 
   const makeBlur = (event) => {
-    setDisplayNewBase(event.target.value=null)
-    setDisplayNewTarget(0)
-  }
-
-
+    setDisplayNewBase((event.target.value = null));
+    setDisplayNewTarget(0);
+  };
 
   return (
     <div className="overflow-x-auto">
@@ -92,7 +83,7 @@ function CurrencyTable({
         </p>
       )}
 
-      <div className="flex flex-col items-center justify-center text-2xl">
+      <div className="flex flex-col items-center justify-center mt-3 text-2xl">
         <div className="flex items-center gap-2">
           <div>{fromCurrency}</div>
           <div>
@@ -106,11 +97,10 @@ function CurrencyTable({
               defaulValue={displayNewBase}
               autoFocus
               onBlur={makeBlur}
-              
             />
           </div>
         </div>
-        <button onClick={handleSwap} >
+        <button onClick={handleSwap}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -126,27 +116,18 @@ function CurrencyTable({
             />
           </svg>
         </button>
-
-        {/* <input
-              type="text"
-              value={displayNewTarget}
-              className="w-full max-w-xs"
-              readOnly
-            /> */}
         <div className="flex items-center gap-2">
           <div>{toCurrency}</div>
           <div>
             <img src={getFlagUrl(toCurrency)} />
           </div>
           <div className="flex items-start ">
-          <input
+            <input
               type="text"
-              value={displayNewTarget}
-      
+              value={displayNewTarget === 0 ? " " : displayNewTarget}
               className=" pl-1 input input-bordered input-accent w-full max-w-xs"
-              
               autoFocus
-            /> 
+            />
           </div>
         </div>
       </div>
