@@ -126,7 +126,6 @@ function CurrencyTable({
               type="text"
               value={displayNewTarget === 0 ? " " : displayNewTarget}
               className=" input input-bordered input-accent w-full max-w-xs"
-              autoFocus
             />
           </div>
         </div>
