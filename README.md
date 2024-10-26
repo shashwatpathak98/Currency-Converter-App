@@ -53,4 +53,4 @@ Contributions, issues, and feature requests are welcome. Feel free to check [iss
 [Your chosen license, e.g., MIT]
 
 Project Link: [https://github.com/shashwatpathak98/currency-converter-app] <br/>
-Live Demo: [(https://currency-converter-app-peach.vercel.app/)]
+Live Demo: [https://currency-converter-app-peach.vercel.app/]
